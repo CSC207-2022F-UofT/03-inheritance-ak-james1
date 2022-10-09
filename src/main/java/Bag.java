@@ -133,7 +133,11 @@ public abstract class Bag {
         else {
             String item = this.contents[this.contents.length -1];
             String[] newContents = new String[this.contents.length - 1];
-            System.arraycopy(this.contents,0,newContents,0, this.contents.length - 1);
+            //System.arraycopy(this.contents,0,newContents,0, this.contents.length - 1);
+            for (int i = 0; i < this.contents.length - 1 ; ) {
+                newContents[i] = this.contents[i];
+                i = i + 1;
+            }
             this.numberOfContents = this.numberOfContents - 1;
             this.contents = newContents;
             return item;
